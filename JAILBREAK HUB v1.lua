@@ -25,3 +25,19 @@ local Section = Tab:NewSection("RedWire s")
 Section:NewButton("ACTIVE", "", function()
 	loadstring(Game:HttpGet("https://raw.githubusercontent.com/RedWirePlatinumTwo/RobloxScripts/main/JailbreakGUI.lua"))()
 end)
+
+local Tab = Window:NewTab("inf rocket fuel")
+local Section = Tab:NewSection("inf rocket fuel")
+Section:NewButton("ACTIVE", "", function()
+local mouse = game:GetService('Players').LocalPlayer:GetMouse()
+local function hotkeyHandler(key)
+  if (key == 'q') then
+    for _, v in next, getgc(true) do
+      if (type(v) == 'table' and rawget(v, 'Nitro')) then
+        v.Nitro = 250
+      end
+    end
+  end
+end
+mouse.KeyDown:connect(hotkeyHandler)
+end)
