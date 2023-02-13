@@ -41,3 +41,13 @@ local function hotkeyHandler(key)
 end
 mouse.KeyDown:connect(hotkeyHandler)
 end)
+
+local Tab = Window:NewTab("player")
+local Section = Tab:NewSection("speed")
+Section:NewSlider("speed", "SliderInfo", 500, 0, function(s) -- 500 (Макс. значение) | 0 (Мин. значение)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+end)
+local Section = Tab:NewSection("jump")
+Section:NewSlider("speed", "SliderInfo", 500, 0, function(s) -- 500 (Макс. значение) | 0 (Мин. значение)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+end)
